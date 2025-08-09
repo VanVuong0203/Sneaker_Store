@@ -1,0 +1,13 @@
+<div *ngIf="loading">Đang tải sản phẩm...</div>
+
+<div *ngIf="!loading && product">
+    <h2>{{ product.name }}</h2>
+    <img [src]="product.imageUrl" alt="{{ product.name }}" width="300">
+    <p>{{ product.description }}</p>
+    <p>Giá: {{ product.price | currency:'USD' }}</p>
+</div>
+
+
+<div *ngIf="!loading && !product">
+    <p>Không tìm thấy sản phẩm.</p>
+</div>
