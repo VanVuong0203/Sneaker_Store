@@ -12,7 +12,31 @@
         "name": "Adidas Yeezy Boost 350",
         "price": 220,
         "brand": "Adidas",
-        "image": "http://localhost:5000/images/yeezy-350.jpg",
+        "image": "http://localhost:5000/images/nike-af1.jpg",
         "stock": 5
+    },
+    {
+        "id": 3,
+        "name": "Nike Air Force 1",
+        "price": 120,
+        "brand": "Nike",
+        "image": "http://localhost:5000/images/nike-af1.jpg",
+        "stock": 12
+    },
+    {
+        "id": 4,
+        "name": "Nike Air Force 1",
+        "price": 120,
+        "brand": "Nike",
+        "image": "http://localhost:5000/images/nike-af1.jpg",
+        "stock": 12
+    },
+    {
+        "id": 5,
+        "name": "Nike Air Force 1",
+        "price": 120,
+        "brand": "Nike",
+        "image": "http://localhost:5000/images/nike-af1.jpg",
+        "stock": 12
     }
 ]

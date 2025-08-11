@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 
@@ -15,7 +15,7 @@ export class HomePageComponent implements OnInit {
     products: Product[] = [];
     loading = true;
 
-    constructor(private svc: ProductService) { }
+    constructor(private svc: ProductService, private router: Router) { }
 
     ngOnInit() {
         this.svc.getProducts().subscribe({
@@ -28,5 +28,8 @@ export class HomePageComponent implements OnInit {
                 this.loading = false;
             }
         });
+    }
+    viewDetail(id: number) {
+        this.router.navigate(['/product', id]);
     }
 }

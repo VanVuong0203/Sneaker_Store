@@ -1,15 +1,13 @@
-<!-- Header -->
 <header class="site-header">
-    <div class="logo">👟 Sneaker Store</div>
+    <div class="logo">Sneaker Store</div>
     <nav class="nav-links">
-        <a href="#">Trang chủ</a>
-        <a href="#">Sản phẩm</a>
-        <a href="#">Khuyến mãi</a>
-        <a href="#">Liên hệ</a>
+        <a routerLink="/">Trang chủ</a>
+        <a routerLink="/products">Sản phẩm</a>
+        <a routerLink="/sale">Khuyến mãi</a>
+        <a routerLink="/contact">Liên hệ</a>
     </nav>
 </header>
 
-<!-- Banner Hero -->
 <section class="hero">
     <div class="hero-content">
         <h1>🔥 Sneaker Store</h1>
@@ -18,21 +16,19 @@
     </div>
 </section>
 
-<!-- Danh mục sản phẩm -->
 <section class="product-section">
     <h2>Sản phẩm nổi bật</h2>
     <div class="product-grid">
-        <div class="product-card" *ngFor="let p of [1,2,3,4,5,6]">
-            <img src="https://via.placeholder.com/300x200" alt="Tên sản phẩm">
-            <h3>Air Max 270</h3>
-            <p class="brand">Nike</p>
-            <p class="price">$150</p>
-            <button class="btn-outline">Xem chi tiết</button>
+        <div class="product-card" *ngFor="let p of products">
+            <img [src]="p.imageUrl" [alt]="p.name" />
+            <h3>{{ p.name }}</h3>
+            <p class="brand">{{ p.brand }}</p>
+            <p class="price">{{ p.price | currency:'USD' }}</p>
+            <button class="btn-outline" (click)="viewDetail(p.id)">Xem chi tiết</button>
         </div>
     </div>
 </section>
 
-<!-- Banner Quảng cáo -->
 <section class="promo-banner">
     <div class="promo-content">
         <h2>Ưu đãi đặc biệt</h2>
@@ -41,7 +37,6 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer class="site-footer">
     <p>&copy; 2025 Sneaker Store. All rights reserved.</p>
 </footer>
